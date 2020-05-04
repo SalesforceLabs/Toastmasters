@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title={title} icon-name="custom:custom25" if:false={hideAgenda}>
+        <div slot="actions" if:true={showActionMenu}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-button-menu
+                    alternative-text="Show menu"
+                    variant="border-filled"
+                    menu-alignment="auto"
+                    onselect={handleSelect}
+                >
+                    <template for:each={actionItems} for:item="actionItem">
+                        <lightning-menu-item key={actionItem.value} value={actionItem.value} label={actionItem.label}>
+                        </lightning-menu-item>
+                    </template>
+                </lightning-button-menu>
+            </div>
+        </div>
+        <lightning-record-form
+            class="slds-p-around_small"
+            record-id={recordId}
+            object-api-name={objectApiName}
+            layout-type="Full"
+            mode={mode}
+            columns="1"
+            onsuccess={handleSuccess}
+        >
+        </lightning-record-form>
+    </lightning-card>
+    <lightning-card if:true={showBallot}>
+        <c-ballot type={ballotType} onhide={hideBallot}></c-ballot>
+    </lightning-card>
+    <lightning-card if:true={showEvaluation}>
+        <c-evaluation-form onhide={hideEvaluation}></c-evaluation-form>
+    </lightning-card>
+</template>

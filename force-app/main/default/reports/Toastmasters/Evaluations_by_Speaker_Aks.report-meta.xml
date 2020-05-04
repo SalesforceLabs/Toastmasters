@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Evaluation__c.Evaluator__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Evaluation__c.ObjectivesMet__c</field>
+    </columns>
+    <columns>
+        <field>Evaluation__c.Body__c</field>
+    </columns>
+    <columns>
+        <field>Evaluation__c.Conclusion__c</field>
+    </columns>
+    <columns>
+        <field>Evaluation__c.PhysicalActions__c</field>
+    </columns>
+    <columns>
+        <field>Evaluation__c.Suggestions__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>Evaluation__c.MeetingDate__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Evaluation__c.Speaker__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Evaluations by Speaker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Evaluation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Evaluation__c.MeetingDate__c</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

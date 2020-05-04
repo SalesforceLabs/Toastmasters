@@ -1,0 +1,27 @@
+<template>
+    <lightning-card if:false={error}>
+        <lightning-button
+            slot="actions"
+            variant="brand"
+            label={detailsButtonLabel}
+            title={detailsButtonLabel}
+            onclick={toggleDetails}
+        ></lightning-button>
+        <template if:true={showDetails}>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" flexibility="auto" if:true={accountData}>
+                    <c-account-data account={accountData}></c-account-data>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" flexibility="auto" if:true={grandParentData}>
+                    <c-account-data account={grandParentData}></c-account-data>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" flexibility="auto" if:true={parentData}>
+                    <c-account-data account={parentData}></c-account-data>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+    <template if:true={error}>
+        <c-error-panel errors={error}></c-error-panel>
+    </template>
+</template>

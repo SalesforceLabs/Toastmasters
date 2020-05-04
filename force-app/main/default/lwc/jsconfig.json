@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/accountData": [
+                "accountData/accountData.js"
+            ],
+            "c/accountSelector": [
+                "accountSelector/accountSelector.js"
+            ],
+            "c/accountSidebar": [
+                "accountSidebar/accountSidebar.js"
+            ],
+            "c/ballot": [
+                "ballot/ballot.js"
+            ],
+            "c/errorPanel": [
+                "errorPanel/errorPanel.js"
+            ],
+            "c/evaluationForm": [
+                "evaluationForm/evaluationForm.js"
+            ],
+            "c/ldsUtils": [
+                "ldsUtils/ldsUtils.js"
+            ],
+            "c/meetingSchedule": [
+                "meetingSchedule/meetingSchedule.js"
+            ],
+            "c/meetingSchedules": [
+                "meetingSchedules/meetingSchedules.js"
+            ],
+            "c/meetingSelector": [
+                "meetingSelector/meetingSelector.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

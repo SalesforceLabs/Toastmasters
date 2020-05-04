@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title={labels.scheduleOfRoles} icon-name="custom:custom25" if:true={showForm}>
+        <template if:true={schedules.data}>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item
+                    flexibility="auto"
+                    padding="around-small"
+                    size="12"
+                    small-device-size="12"
+                    medium-device-size="6"
+                    large-device-size="3"
+                >
+                    <c-meeting-schedule onsuccess={handleSuccess}></c-meeting-schedule>
+                </lightning-layout-item>
+                <template for:each={schedules.data} for:item="schedule">
+                    <lightning-layout-item
+                        key={schedule.Id}
+                        flexibility="auto"
+                        padding="around-small"
+                        size="12"
+                        small-device-size="12"
+                        medium-device-size="6"
+                        large-device-size="3"
+                    >
+                        <c-meeting-schedule record-id={schedule.Id}></c-meeting-schedule>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+        <template if:true={schedules.error}>
+            <c-error-panel errors={schedules.error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

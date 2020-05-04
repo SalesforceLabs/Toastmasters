@@ -1,0 +1,35 @@
+<template>
+    <lightning-tile class="slds-p-around_small" if:true={account}>
+        <template if:true={account.Name}>
+            <p><lightning-badge label="Name"></lightning-badge></p>
+            <p class="slds-p-left_small"><lightning-formatted-text value={account.Name}></lightning-formatted-text></p>
+        </template>
+        <template if:true={account.Description}>
+            <p class="slds-p-left_small">
+                <lightning-formatted-text value={account.Description}></lightning-formatted-text>
+            </p>
+        </template>
+        <template if:true={account.Website}>
+            <p><lightning-badge label="Website"></lightning-badge></p>
+            <p class="slds-p-left_small"><lightning-formatted-url value={account.Website}></lightning-formatted-url></p>
+        </template>
+        <template if:true={facebook}>
+            <p><lightning-badge label="Facebook"></lightning-badge></p>
+            <p class="slds-p-left_small">
+                <lightning-formatted-url value={facebook}></lightning-formatted-url>
+            </p>
+        </template>
+        <template if:true={meetup}>
+            <p><lightning-badge label="Meetup"></lightning-badge></p>
+            <p class="slds-p-left_small">
+                <lightning-formatted-url value={meetup}></lightning-formatted-url>
+            </p>
+        </template>
+        <template if:true={linkedIn}>
+            <p><lightning-badge label="LinkedIn"></lightning-badge></p>
+            <p class="slds-p-left_small">
+                <lightning-formatted-url value={linkedIn}></lightning-formatted-url>
+            </p>
+        </template>
+    </lightning-tile>
+</template>

@@ -1,0 +1,20 @@
+minimum_cumulusci_version: '3.11.0'
+project:
+    name: toastmasters
+    package:
+        name:  toastmasters
+        namespace: vtm
+        api_version: '48.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/toastmasters/tests
+            options:
+                outputdir: robot/toastmasters/results
+
+    robot_testdoc:
+        options:
+            path: robot/toastmasters/tests
+            output: robot/toastmasters/doc/toastmasters_tests.html

@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable">
+    <aura:attribute name="accountId" type="String"></aura:attribute>
+    <aura:attribute name="meetingId" type="String"></aura:attribute>
+
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="3">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12">
+                    <c:accountSelector onselected="{!c.handleAccountSelected}"></c:accountSelector>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="12">
+                    <aura:if isTrue="{!v.accountId}">
+                        <c:accountSidebar recordId="{!v.accountId}"></c:accountSidebar>
+                    </aura:if>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:layoutItem>
+        <aura:if isTrue="{!v.accountId}">
+            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="12" largeDeviceSize="9">
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="12">
+                        <c:meetingSelector
+                            accountId="{!v.accountId}"
+                            onselected="{!c.handleMeetingSelected}"
+                        ></c:meetingSelector>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="12">
+                        <aura:if isTrue="{!v.meetingId}">
+                            <c:meetingSchedule recordId="{!v.meetingId}" showActionMenu="true"></c:meetingSchedule>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:layoutItem>
+        </aura:if>
+    </lightning:layout>
+</aura:component>

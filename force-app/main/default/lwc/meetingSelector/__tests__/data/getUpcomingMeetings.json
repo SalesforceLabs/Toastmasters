@@ -1,0 +1,22 @@
+[
+    {
+        "Id": "a003h000003XTI9AA1",
+        "MeetingDate__c": "2020-05-06"
+    },
+    {
+        "Id": "a003h000003XTI9AA2",
+        "MeetingDate__c": "2020-05-07"
+    },
+    {
+        "Id": "a003h000003XTI9AA3",
+        "MeetingDate__c": "2020-05-08"
+    },
+    {
+        "Id": "a003h000003XTI9AA4",
+        "MeetingDate__c": "2020-05-09"
+    },
+    {
+        "Id": "a003h000003XTI9AA5",
+        "MeetingDate__c": "2020-05-10"
+    }
+]

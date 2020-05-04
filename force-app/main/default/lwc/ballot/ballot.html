@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess}>
+            <lightning-input-field field-name={categoryField} value={category}> </lightning-input-field>
+            <lightning-input-field field-name={memberField}> </lightning-input-field>
+            <div class="slds-m-top_medium">
+                <lightning-button class="slds-m-top_small" label="Cancel" onclick={handleHide}></lightning-button>
+                <lightning-button variant="brand" type="submit" name="save" label="Vote"> </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
