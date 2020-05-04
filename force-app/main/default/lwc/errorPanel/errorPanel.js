@@ -1,9 +1,10 @@
-import { LightningElement, api } from 'lwc';
-import { reduceErrors } from 'c/ldsUtils';
+// original code from lwc-recipes
+import { LightningElement, api } from "lwc";
+import { reduceErrors } from "c/ldsUtils";
 
 export default class ErrorPanel extends LightningElement {
     /** Generic / user-friendly message */
-    @api friendlyMessage = 'Error retrieving data';
+    @api friendlyMessage = "Error retrieving data";
 
     viewDetails = false;
 

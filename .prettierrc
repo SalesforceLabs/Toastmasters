@@ -1,0 +1,40 @@
+printWidth: 120
+tabWidth: 4
+overrides:
+    - files: "**/lwc/**/*.html"
+      options:
+          parser: lwc
+    - files: "**/lwc/**/*.js"
+      options:
+          trailingComma: "es5"
+    - files: "*.{cmp,page,component,xml}"
+      options:
+          parser: "html"
+    - files: "unpackaged/**/*.{cmp,page,component}"
+      options:
+          parser: "html"
+    - files: "unpackaged/**/*.{xml,object,duplicateRule,app,permissionset,profile,standardValueSet,settings,report,reportType,layout,topicsForObjects,workflow}"
+      options:
+          parser: "html"
+          printWidth: 300
+    - files: "**/aura/**/*.js"
+      options:
+          trailingComma: "none"
+    - files: "**/classes/*.cls"
+      options:
+          plugins:
+              - "./node_modules/prettier-plugin-apex"
+          parser: apex
+          apexInsertFinalNewline: true
+    - files: "**/triggers/*.cls"
+      options:
+          plugins:
+              - "./node_modules/prettier-plugin-apex"
+          parser: apex
+          apexInsertFinalNewline: true
+    - files: "*.apex"
+      options:
+          plugins:
+              - "./node_modules/prettier-plugin-apex"
+          parser: apex-anonymous
+          apexInsertFinalNewline: true
