@@ -3,6 +3,7 @@
  * @param {FetchResponse|FetchResponse[]} errors
  * @return {String[]} Error messages
  */
+// original code from lwc-recipes
 export function reduceErrors(errors) {
     if (!Array.isArray(errors)) {
         errors = [errors];
